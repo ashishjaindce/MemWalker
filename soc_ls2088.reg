@@ -1,0 +1,29 @@
+LS2088
+{
+	SEC_MCFGR	0x8180270	32  
+	JRSTARTR	0x8180288	32 
+	{
+		RSVD		31	16	0	#rsvd
+		START_ADDR	15	0	0	#job Ring start
+	}
+	SEC_STATUS	0x8180290	32 
+	QMAN_STATS	0x81802A0	32 
+	{
+		ENABLED		31	31	0 # 1- enabled, 0 - disabled
+		RSVD		30	30	0 # reserved bytes
+		EQ_RJ		29	26	f # Enqueue rejections count
+		CGR_CNT		25	20	3f # CGR Count
+		FIFO_FULL	19	17	7 # FIFO Full count
+		EQ_WRED		16	13	f # Enqueue WRED rejections count
+		EQ_SUCCESS	12	7	3f # Enqueue SUccess count
+		EQ_TD		6	4	7 # Enqueue Tail drop count
+		RSVD2		3	2	3 # Reserved
+		STATUS		1	0	0 #  Status 
+	}
+	QMAN_FQ_STATUS	0x81802A8	32
+	BMAN_STATS	0x81802B0	32
+	{
+		B_FREE	31	16	12 # Total free buffers availaible in bpool
+		BTOTAL	15	0	13 # total buffers in bpool
+	}
+}
